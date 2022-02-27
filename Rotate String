@@ -1,0 +1,22 @@
+class Solution {
+    public boolean rotateString(String s, String goal) {
+        StringBuffer b=new StringBuffer();
+        b.append(s);
+       //naive approach with O(n2) TC
+        int i=0;
+        while(i<s.length()-1)
+        {
+            b.append(b.charAt(0));
+            b.deleteCharAt(0);
+           // System.out.println(b);
+           //  String str = b.toString();
+            if(goal.contentEquals(b) )
+                return true;
+            else
+                i++;
+        }
+        
+        return false;
+        
+    }
+}
